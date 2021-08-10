@@ -12,7 +12,7 @@ class ImagesController < ApplicationController
     @image = @user.images.new(image_params)
     if @image.save
       flash[:notice] = "Image uploaded"
-      redirect_to  user_image_path(@user)
+      redirect_to  user_image_path(@user, @image)
     else
       flash[:error] = "There was a problem uploading your image."
       render :new
@@ -22,6 +22,7 @@ class ImagesController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @image = Image.find(params[:id])
+    @images = @user.images
     render :show
   end
 
