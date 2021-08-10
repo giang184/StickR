@@ -5,6 +5,12 @@ ruby '2.6.5'
 
 gem 'jquery-rails'
 
+gem 'autoprefixer-rails'
+
+gem 'popper_js'
+
+gem 'sassc-rails'
+
 gem 'bootstrap', '~> 5.0.1'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 

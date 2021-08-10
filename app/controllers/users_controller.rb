@@ -16,6 +16,10 @@ def create
   end
 end
 
+def show
+  render :show
+end
+
   private
     def user_params
       params.require(:user).permit(:email, :password, :password_confirmation)

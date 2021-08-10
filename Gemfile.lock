@@ -238,6 +238,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.1.0)
   bootstrap (~> 5.0.1)
@@ -250,12 +251,14 @@ DEPENDENCIES
   launchy
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
+  popper_js
   pry
   puma (~> 3.11)
   rails (~> 5.2.4, >= 5.2.4.4)
   rspec
   rspec-rails
   sass-rails (~> 5.0)
+  sassc-rails
   selenium-webdriver
   shoulda-matchers
   spring
