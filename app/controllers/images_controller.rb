@@ -7,7 +7,7 @@ class ImagesController < ApplicationController
     render :new
   end
 
-  def edit
+  def edit 
     @user = User.find(params[:user_id])
     @image = Image.find(params[:id])
     render :edit
