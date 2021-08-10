@@ -1,4 +1,5 @@
 class ImagesController < ApplicationController
+  before_action :authorize, only: [:new]
 
   def new
     @user = User.find(params[:user_id])
