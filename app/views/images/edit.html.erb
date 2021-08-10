@@ -1,0 +1,15 @@
+<h1>Update image:</h1>
+
+<%= form_for [@user, @image] do |f| %>
+  <%= f.label :url %>
+  <%= f.text_field :url %>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <p><%= f.submit %></p>
+<% end %>
+
+<p><%= link_to "Delete image", user_image_path(@image),
+                        :data => {:confirm => "Are you sure?",
+                                        :method => "delete"} %></p>
+
+<p><%= link_to "Return to images", user_image_path %></p>

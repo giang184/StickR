@@ -7,6 +7,12 @@ class ImagesController < ApplicationController
     render :new
   end
 
+  def edit
+    @user = User.find(params[:user_id])
+    @image = Image.find(params[:id])
+    render :edit
+  end
+
   def create
     @user = User.find(params[:user_id])
     @image = @user.images.new(image_params)
@@ -27,9 +33,10 @@ class ImagesController < ApplicationController
   end
 
   def destroy
+    @user = User.find(params[:user_id])
     @image = Image.find(params[:id])
     @image.destroy
-    redirect_to user_image_path(@user)
+    render :show
   end
 
   private

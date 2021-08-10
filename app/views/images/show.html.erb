@@ -6,9 +6,9 @@
   <% @user.images.each do |image| %>
     <ul>
       <li>
-        <%= link_to image.id, user_image_path(@user, image) %>
+        <%= link_to image.id, edit_user_image_path(@user, image) %>
 
-        <%= image_tag "#{image.url}", height: 300 %>
+        <%= image_tag "#{image.url}", zheight: 300 %>
         
       </li>
     </ul>
