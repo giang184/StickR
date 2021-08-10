@@ -28,3 +28,4 @@ tmp/
 /config/master.key
 
 .DS_Store
+.note

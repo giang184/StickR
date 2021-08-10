@@ -16,5 +16,3 @@ class ApplicationController < ActionController::Base
   end
 
 end
-
-# Co-authored-by: Arthur Lee <meleearthur@gmail.com>
