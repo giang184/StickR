@@ -10,15 +10,35 @@
   </head>
 
   <body>
-    <% if current_user %>
-      <%= current_user.email %> | <%= link_to "Sign out", '/signout' %>
-    <% else %>
-      <%= link_to "Sign up", 'signup' %> | <%= link_to "Sign in", '/signin' %>
-    <% end %>
+      <nav class="navbar navbar-expand-xl navbar-light bg-light">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarBasic">
+          <ul class="navbar-nav me-auto mb-2 mb-xl-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" tabindex="-1">Link</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <% if current_user %>
+        <%= current_user.email %> | <%= link_to "Sign out", '/signout' %>
+      <% else %>
+        <%= link_to "Sign up", 'signup' %> | <%= link_to "Sign in", '/signin' %>
+      <% end %>
 
-    <%= flash[:alert] %>
-    <%= flash[:notice] %>
+      <%= flash[:alert] %>
+      <%= flash[:notice] %>
 
-    <%= yield %>
+     
+      <%= yield %>
+    </div>
   </body>
 </html>
