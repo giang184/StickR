@@ -34,13 +34,18 @@ end
 
 def destroy
   @users = User.all
-  @user = User.find(params[:id])
-  @user.destroy
-  render :admin_user
+  if User.find(session[:user_id]) == User.find(params[:id])
+    flash[:notice] = "NO"
+    render :admin_user
+  else
+    @user = User.find(params[:id])
+    @user.destroy
+    render :admin_user
+  end
 end
 
   private
     def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation, :isAdmin)
+      params.require(:user).permit(:email, :password, :password_confirmation, :admin)
     end
 end
