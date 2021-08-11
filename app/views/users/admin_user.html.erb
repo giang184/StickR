@@ -1,0 +1,15 @@
+<br>
+<% if @users.any? %>
+  <h4>Here are the users in the database</h4>
+
+  <% @users.each do |user| %>
+    <ul>
+      <li>
+        <%= link_to user.email, edit_user_path(user) %>
+        
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>There are no users.</p>
+<% end %>
