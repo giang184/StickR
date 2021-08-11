@@ -1,0 +1,23 @@
+<% if @user.images.any? %>
+  <h4>Here are the images the user created</h4>
+
+  <% @user.images.each do |image| %>
+    <ul>
+      <li>
+        <%= link_to image.id, edit_user_image_path(@user, image) %>
+
+        <%= image_tag "#{image.url}", height: 300 %>
+        
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>There are no images.</p>
+<% end %>
+
+<p><%= link_to "Delete user", user_path(@user),
+                                      :data => {:confirm => "Are you sure?",
+                                        :method => "delete"} %></p>
+
+
+<p><%= link_to "Return to users list", admin_path %></p>

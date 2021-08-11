@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :authorize, only: [:show]
-  before_action :authorize_admin, only: [:admin] #method, not path
+  before_action :authorize_admin, only: [:admin, :edit, :destroy] #method, not path
+
 def new
   @user = User.new
 end
@@ -24,6 +25,18 @@ end
 def admin
     @users = User.all
     render :admin_user
+end
+
+def edit
+  @user = User.find(params[:id])
+  render :edit
+end
+
+def destroy
+  @users = User.all
+  @user = User.find(params[:id])
+  @user.destroy
+  render :admin_user
 end
 
   private
