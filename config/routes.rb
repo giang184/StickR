@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root to: 'users#new'
+  root to: 'index#show'
   
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/signout' => 'sessions#destroy'
 
   get '/admin' => 'users#admin'
+  get '/index' => 'index#show'
 
   resources :users do
     resources :images
