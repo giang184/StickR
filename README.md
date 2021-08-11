@@ -1,4 +1,4 @@
-git commit -m "finish what we can"
+git commit -m "finish what we can
 
 Co-authored-by: Arthur Lee <meleearthur@gmail.com>
 Co-authored-by: Dave Lindqvist <Lindqvist.Dave@gmail.com>"
