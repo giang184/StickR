@@ -1,5 +1,5 @@
 class ImagesController < ApplicationController
-  before_action :authorize, only: [:new]
+  before_action :authorize, only: [:new, :edit, :show]
 
   def new
     @user = User.find(params[:user_id])
@@ -11,6 +11,16 @@ class ImagesController < ApplicationController
     @user = User.find(params[:user_id])
     @image = Image.find(params[:id])
     render :edit
+  end
+
+  def update
+    @image = Image.find(params[:id])
+    @user = User.find(params[:user_id])
+    if @image.update(image_params)
+      redirect_to user_image_path(@user, @image)
+    else
+      render :edit
+    end
   end
 
   def create

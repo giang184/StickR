@@ -1,1 +1,18 @@
+<% if @user.images.any? %>
+  <h4>Here are the images you created</h4>
+
+  <% @user.images.each do |image| %>
+    <ul>
+      <li>
+        <%= link_to image.id, edit_user_image_path(@user, image) %>
+
+        <%= image_tag "#{image.url}", height: 300 %>
+        
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>There are no images.</p>
+<% end %>
+
 <p><%= link_to "add image", new_user_image_path(@user)%></p> 

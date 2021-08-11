@@ -8,7 +8,7 @@
   <p><%= f.submit %></p>
 <% end %>
 
-<p><%= link_to "Delete image", user_image_path(@image),
+<p><%= link_to "Delete image", user_image_path,
                         :data => {:confirm => "Are you sure?",
                                         :method => "delete"} %></p>
 
