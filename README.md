@@ -1,5 +1,5 @@
 
-# StickR by Andrew Giang, Dave
+# StickR by Andrew Giang, Dave Lindqvist, Arthur Lee 
 This project creates an application that would allow users to create an account and upload photos to their account. Normal users would have access to upload, edit, and delete photos. Admin users can view and delete users and their photos from the database.
 
 ## Technology Used
