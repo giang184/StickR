@@ -17,13 +17,15 @@
 @import "bootstrap";
 
 body {
-  background-color: rgb(226, 225, 182);
+  // background-color: rgb(226, 225, 182);
+  background-image: url("https://images.unsplash.com/photo-1628194700797-a8c8040a32b1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80");
+  background-size: cover;
 }
 
 .container {
   padding: 30px;
   background-color: azure;
-  margin: 100px;
+  margin-top: 100px;
 }
 
 .nav-item {
@@ -40,7 +42,7 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto;
-
+  grid-template-columns: auto auto auto;
+  grid-row-gap: 10px;
   padding: 10px;
 }
