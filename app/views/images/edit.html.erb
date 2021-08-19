@@ -1,18 +1,26 @@
-<h1>Update image:</h1>
-
-<%= form_for [@user, @image] do |f| %>
-  <br>
-  <%= f.label :url %>:
-  <%= f.text_field :url %>
+<div class="row">
+  <div class="col-sm-4">
+  <h4><%= @image.description%></h4><br>
+  <% if @image.photo.attached? %>
+    <%= image_tag(@image.photo, width: 200) %>
+  <% end %>
   <br><br>
-  <%= f.label :Name_or_Description %>:
-  <%= f.text_field :description %>
-  <br><br>
-  <p><%= f.submit %></p>
-<% end %>
+  <p><%= link_to "Delete image", user_image_path,
+                  :data => {:confirm => "Are you sure?",
+                  :method => "delete"} %></p>
 
-<p><%= link_to "Delete image", user_image_path,
-                        :data => {:confirm => "Are you sure?",
-                                        :method => "delete"} %></p>
-
-<p><%= link_to "Return to images", user_image_path %></p>
+  <p><%= link_to "Return to images", user_image_path %></p>
+  </div>
+  <div class="col-sm-5">
+  <h1>Update Image </h1>
+  <%= form_for [@user, @image] do |f| %>
+    <br>
+    <%= f.file_field :photo %>
+    <br><br>
+    <%= f.label :Name_or_Description %>:
+    <%= f.text_field :description %>
+    <br><br>
+    <p><%= f.submit %></p>
+  <% end %>
+  </div>
+</div>

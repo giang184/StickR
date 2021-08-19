@@ -7,9 +7,11 @@
     <% @user.images.each do |image| %>
     
       <div class="grid-item">
+        <% if image.photo.attached? %>
+          <p style="text-align:center;"><%= image_tag(image.photo, width: 300) %></p>
+        <% end %>
         <p style="text-align:center;"><%= link_to image.description, edit_user_image_path(@user, image) %></p>
- 
-        <p style="text-align:center;"><%= image_tag "#{image.url}", height: 200 %></p>
+        
         </div>
     <% end %>
   </div>

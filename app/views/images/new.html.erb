@@ -2,8 +2,7 @@
 
 <%= form_for [@user, @image] do |f| %>
   <br>
-  <%= f.label :url %>:
-  <%= f.text_field :url %>
+  <%= f.file_field :photo %>
   <br><br>
   <%= f.label :Name_or_Description %>:
   <%= f.text_field :description %>

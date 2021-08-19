@@ -2,19 +2,24 @@
 
 <% if @user.images.any? %>
   <br>
-
-  <% @user.images.each do |image| %>
-    <ol>
-      <li>
-        <%= link_to image.description, edit_user_image_path(@user, image) %>
-
-        <%= image_tag "#{image.url}", height: 100 %>
+  <div class="grid-container">
+    <% @user.images.each do |image| %>
+    
+      <div class="grid-item">
+        <% if image.photo.attached? %>
+          <p style="text-align:center;"><%= image_tag(image.photo, width: 300) %></p>
+        <% end %>
+        <p style="text-align:center;"><%= link_to image.description, edit_user_image_path(@user, image) %></p>
         
-      </li>
-    </ol>
-  <% end %>
+        </div>
+    <% end %>
+  </div>
 <% else %>
-  <p>There are no images.</p>
+<ul>
+  <li>
+    <p>You currently have no images.</p>
+  </li>
+</ul>
 <% end %>
 
-<p><%= link_to "add image", new_user_image_path(@user)%></p> 
+<h5><%= link_to "add image", new_user_image_path(@user)%></h5> 
