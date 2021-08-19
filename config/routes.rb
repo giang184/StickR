@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post '/users' => 'users#create'
   
   get '/signin' => 'sessions#new'
-  get '/test' => 'sessions#test'
+  get '/show' => 'sessions#show'
   post '/signin' => 'sessions#create'
   get '/signout' => 'sessions#destroy'
 

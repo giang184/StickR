@@ -1,17 +1,17 @@
-
+<h2>Your Image Gallery</h2>
 
 <% if @user.images.any? %>
-  <h4>Here are the images you created</h4>
+  <br>
 
   <% @user.images.each do |image| %>
-    <ul>
+    <ol>
       <li>
-        <%= link_to image.id, edit_user_image_path(@user, image) %>
+        <%= link_to image.description, edit_user_image_path(@user, image) %>
 
-        <%= image_tag "#{image.url}", height: 300 %>
+        <%= image_tag "#{image.url}", height: 100 %>
         
       </li>
-    </ul>
+    </ol>
   <% end %>
 <% else %>
   <p>There are no images.</p>

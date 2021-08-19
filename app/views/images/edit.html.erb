@@ -1,10 +1,13 @@
 <h1>Update image:</h1>
 
 <%= form_for [@user, @image] do |f| %>
-  <%= f.label :url %>
+  <br>
+  <%= f.label :url %>:
   <%= f.text_field :url %>
-  <%= f.label :description %>
-  <%= f.text_area :description %>
+  <br><br>
+  <%= f.label :Name_or_Description %>:
+  <%= f.text_field :description %>
+  <br><br>
   <p><%= f.submit %></p>
 <% end %>
 

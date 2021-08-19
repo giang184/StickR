@@ -1,0 +1,23 @@
+<h2>Your Image Gallery</h2>
+
+<% if @user.images.any? %>
+  <br>
+  <div class="grid-container">
+    <% @user.images.each do |image| %>
+    
+      <div class="grid-item">
+        <%= link_to image.description, edit_user_image_path(@user, image) %>
+        <br>
+        <%= image_tag "#{image.url}", height: 200 %>
+        </div>
+    <% end %>
+  </div>
+<% else %>
+<ul>
+  <li>
+    <p>You currently have no images.</p>
+  </li>
+</ul>
+<% end %>
+
+<h3><%= link_to "add image", new_user_image_path(@user)%></h3> 

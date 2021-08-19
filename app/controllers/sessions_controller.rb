@@ -6,18 +6,18 @@ class SessionsController < ApplicationController
       flash[:notice] = "You've signed in."
       session[:user_id] = @user.id
       # http://localhost:3000/users/8/images/new
-      redirect_to test_path
+      redirect_to show_path
     else
       flash[:alert] = "There was a problem signing in. Please try again."
       redirect_to signin_path
     end
   end
 
-  def test
+  def show
     @user = User.find(session[:user_id])
     # @user = User.authenticate(params[:email], params[:password])
     # session[:user_id] = @user.id
-    render :test
+    render :show
   end
 
   def destroy
